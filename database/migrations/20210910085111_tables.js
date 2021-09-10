@@ -34,13 +34,13 @@ exports.up = function(knex) {
 
     .createTable("invitees", tbl => {
       tbl.increments();
-      tbl.integer('userId')
+      tbl.integer('userID')
         .unsigned()
         .notNullable()
         .references('id').inTable('users')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
-      tbl.integer('apptId')
+      tbl.integer('apptID')
         .unsigned()
         .notNullable()
         .references('id').inTable('appointments')
@@ -50,13 +50,13 @@ exports.up = function(knex) {
 
     .createTable("comments", tbl => {
       tbl.increments();
-      tbl.integer('userId')
+      tbl.integer('userID')
         .unsigned()
         .notNullable()
         .references('id').inTable('users')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
-      tbl.integer('apptId')
+      tbl.integer('apptID')
         .unsigned()
         .notNullable()
         .references('id').inTable('appointments')

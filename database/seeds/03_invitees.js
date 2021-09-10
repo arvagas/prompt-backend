@@ -4,7 +4,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('invitees').insert([
-        {userId: 1, apptId: 1},
+        {userID: 1, apptID: 1},
       ]);
     });
 };
