@@ -18,7 +18,7 @@ router.post('/', authMW, (req, res) => {
     .catch(err => res.status(500).json({ err: err.message }))
 });
 
-router.put('/:id', mw.validateIfCreatedByUser, (req, res) => {
+router.put('/:id', authMW, (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
@@ -27,7 +27,7 @@ router.put('/:id', mw.validateIfCreatedByUser, (req, res) => {
     .catch(err => res.status(500).json({ err: err.message }))
 });
 
-router.delete('/:id', mw.validateIfCreatedByUser, (req, res) => {
+router.delete('/:id', authMW, (req, res) => {
   const { id } = req.params;
 
   Appts.remove(id)
