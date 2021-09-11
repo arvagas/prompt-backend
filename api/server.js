@@ -9,11 +9,6 @@ server.use(cors());
 server.use('/api/users', userRouter)
 server.use('/api/appointments', apptRouter)
 
-const knex = require('knex');
-knex('knex_migration')
-    .delete()
-    .whereIn('users', ['20210910162056_tables.js']);
-
 server.get('/', (req, res) => {
   res.json('Hello world!');
 });
